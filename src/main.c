@@ -8,19 +8,22 @@
   ******************************************************************************
 */
 
-
+#include <stdio.h>
 #include "lvgl.h"
 #include "app_hal.h"
 
-#include "demos/lv_demos.h"
+#include "timely.h"
+#include "timely_config.h"
 
 int main(void)
 {
-	lv_init();
+    printf("Initializing lvgl...\n");
+    lv_init();
 
-	hal_setup();
+    printf("Initializing hal...\n");
+    hal_setup();
 
-  lv_demo_widgets();
-
-	hal_loop();
+    printf("Initializing timely...\n");
+    timely_launcher_init();
+    hal_loop();
 }
